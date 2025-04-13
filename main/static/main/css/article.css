@@ -1,0 +1,12 @@
+.param-label {
+    font-weight: 500;
+    color: #6c757d;
+}
+.param-value {
+    font-weight: 600;
+}
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

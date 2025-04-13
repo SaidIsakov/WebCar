@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="container mt-4">
+        <div class="card mb-3">
+            <img src="" class="card-img-top" style="max-height: 0px; object-fit: cover;">
+            <div class="card-body">
+                <h3 class="card-title mb-4">{{ post.title }}</h3>
+                
+                
+                <div class="row">
+                    <!-- Первый столбец -->
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Год выпуска:</span>
+                                <span class="param-value">{{ post.year_of_release }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Пробег:</span>
+                                <span class="param-value">{{ post.mileage }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">ПТС:</span>
+                                <span class="param-value">{{ post.PTC }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Владельцев:</span>
+                                <span class="param-value">{{ post.owner }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Состояние:</span>
+                                <span class="param-value">{{ post.сondition }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Мощность:</span>
+                                <span class="param-value">{{ post.power }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Объём двигателя:</span>
+                                <span class="param-value">{{ post.engine_capacity }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Второй столбец -->
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Тип двигателя:</span>
+                                <span class="param-value">{{ post.engine_type }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Коробка передач:</span>
+                                <span class="param-value">{{ post.transmission_box }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Привод:</span>
+                                <span class="param-value">{{ post.drive }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Комплектация:</span>
+                                <span class="param-value">{{ post.Equipment }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Тип кузова:</span>
+                                <span class="param-value">{{ post.Body_type }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Цвет:</span>
+                                <span class="param-value">{{ post.colour }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="param-label">Руль:</span>
+                                <span class="param-value">{{ post.wheel }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,0 +1,4 @@
+
+{% for category in categorys %}
+    <a href="{% url 'category_list' category.id %}" class="list-group-item list-group-item-action">{{ category }}</a>
+{% endfor %}
