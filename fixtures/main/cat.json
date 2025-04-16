@@ -1,0 +1,30 @@
+[
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "title": "Кабриолеты"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "title": "Седаны"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 3,
+        "fields": {
+            "title": "Внедорожики"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "title": "Купе"
+        }
+    }
+]

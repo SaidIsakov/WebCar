@@ -38,6 +38,9 @@ class Cars(models.Model):
     Body_type = models.TextField(max_length=10)#      Тип кузова
     colour = models.TextField(max_length=10)
     wheel = models.TextField(max_length=10)#            Руль
+    url_for_vidio = models.URLField(max_length=200) # url для ютуб обзора
+    history = models.TextField(max_length=2000, blank=True, null=True,default='')
+    
     
     
     def __str__(self):

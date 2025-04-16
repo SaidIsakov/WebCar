@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+ 
+{% block main %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автомобильные новости</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            
+            margin: 0 auto;
+            
+        }
+        
+        .news-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .news-container {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+        
+        .news-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        
+        
+        .news-content {
+            padding: 15px;
+        }
+        
+        .news-date {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+        
+        .news-excerpt {
+            margin-bottom: 15px;
+            color: #34495e;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: #c0392b;
+        }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <header class="news-header">
+        <h1>Автомобильные новости</h1>
+        <p>Свежие новости из мира автомобилей: новые модели, технологии, тест-драйвы и многое другое</p>
+    </header>
+    
+    <div class="news-container">
+        <!-- Новость 1 -->
+        <article class="news-card">
+            
+            <div class="news-content">
+                <p class="news-excerpt">{{ history.history }}</p>
+            </div>
+        </div>
+    </article>
+{% endblock main %}

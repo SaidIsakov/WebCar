@@ -33,6 +33,15 @@ def cars_detail(request, id):
     }
     return render(request, 'main/article.html',content)
 
+def cars_history(request, id):
+    history = Cars.objects.get(id=id)
+    content = {
+        'title':history.title,
+        'history':history,
+    }
+    return render(request, 'main/history.html',content)
+    
+
 
 
 

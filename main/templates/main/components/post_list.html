@@ -5,7 +5,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.text }}</p>
-                        <a href="{% url "cars_detail" post.id  %}" class="btn btn-primary">Подробнее</a>
+                        <a href="{% url "cars_detail" post.id %}" class="btn btn-primary">Подробнее</a>
+                        <a href="{{ post.url_for_vidio }}" class="btn btn-primary">Обзор</a>
+                        <a href="{% url "cars_history" post.id %}" class="btn btn-primary">История</a>
+                        
                     </div>
                 </div>
             </div>
