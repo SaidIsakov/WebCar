@@ -15,6 +15,9 @@ def index(request):
     
     
 def category_list(request, id):
+    
+    """ Реакция на нажатие категорий """
+    
     category = Category.objects.all()
     post = Cars.objects.filter(category_id=id)
     content = {
@@ -26,6 +29,7 @@ def category_list(request, id):
 
 
 def cars_detail(request, id):
+    """ реакция на кнопку ПОДРОБНЕЕ """
     article = Cars.objects.get(id=id)
     content = {
         'title':article.title,

@@ -1,4 +1,10 @@
-
+<head>
+    <style>
+        .list-group-item{
+            background-color: #e1e4f2;
+        }
+    </style>
+</head>
 {% for category in categorys %}
     <a href="{% url 'category_list' category.id %}" class="list-group-item list-group-item-action">{{ category }}</a>
 {% endfor %}
