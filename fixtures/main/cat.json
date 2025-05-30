@@ -26,5 +26,12 @@
         "fields": {
             "title": "Купе"
         }
+    },
+    {
+        "model": "main.category",
+        "pk": 6,
+        "fields": {
+            "title": "Хэтчбеки"
+        }
     }
 ]

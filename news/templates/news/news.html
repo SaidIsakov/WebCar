@@ -14,9 +14,7 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            
             margin: 0 auto;
-            
         }
         
         .news-header {
@@ -28,7 +26,7 @@
         
         .news-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
         
@@ -37,14 +35,13 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            padding: 15px;
         }
         
         .news-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
-        
         
         .news-content {
             padding: 15px;
@@ -88,23 +85,31 @@
             }
         }
     </style>
-
+</head>
+<body>
     <header class="news-header">
         <h1>Автомобильные новости</h1>
         <p>Свежие новости из мира автомобилей: новые модели, технологии, тест-драйвы и многое другое</p>
+        <ul>
+            <p class="nav-item me-2 my-1" role="presentation">
+                <a class="btn btn-primary" href="{% url "add_form" %}" role="button">Добавить новость</a>
+            </p>
+        </ul>
     </header>
     
     <div class="news-container">
-        <!-- Новость 1 -->
+        {% for news_item in news %}
         <article class="news-card">
-            
             <div class="news-content">
-                {% for newses in news %}
-                <div class="news-date">{{ newses.created_at }}</div>
-                <h2 class="news-title">{{ newses.title }}</h2>
-                <p class="news-excerpt">{{ newses.text }}</p>
+                <div class="news-date">{{ news_item.created_at }}</div>
+                <h2 class="news-title">{{ news_item.title }}</h2>
+                <p class="news-excerpt">{{ news_item.about_what }}</p>
+                <p class="news-excerpt">{{ news_item.text }}</p>
             </div>
-                {% endfor %}
-        </div>
         </article>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
 {% endblock main %}

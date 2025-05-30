@@ -1,3 +1,15 @@
+<head>
+    <style>
+        .card-body{
+            background-color: #e1e4f2;
+        }
+        .col:hover{
+            transform: translateY(-5px);
+            transition: all 0.7s ease;
+                 }
+    </style>
+</head>
+
 {% for post in posts %}
             <div class="col">
                 <div class="card h-100">
@@ -5,10 +17,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.text }}</p>
-                        <a href="{% url "cars_detail" post.id %}" class="btn btn-primary">Подробнее</a>
+                        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
                         <a href="{{ post.url_for_vidio }}" class="btn btn-primary">Обзор</a>
                         <a href="{% url "cars_history" post.id %}" class="btn btn-primary">История</a>
-                        
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 #Нужна чтобы модедька обращалась к ссылкам
 
 
@@ -7,6 +8,9 @@ class Category(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('category_list', kwargs={'id':self.pk})
     
     
     
@@ -45,6 +49,11 @@ class Cars(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        """ Метод для подробной харрактеристики автомобиля """
+        return reverse("cars_detail", kwargs={"id": self.pk})
+    
     
     class Meta:
         verbose_name = 'Car'

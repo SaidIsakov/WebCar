@@ -1,10 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Category,Cars
-# Create your views here.
+from django import forms
+from .forms import LoginForm,RegistrationForm
+from django.contrib.auth import login,logout
+from django.contrib import messages
+
+
+
+
 def index(request):
     
     category = Category.objects.all()
-    post = Cars.objects.all()
+    post = Cars.objects.order_by('?')
+    
     
     content = {
         'categorys': category,
@@ -44,8 +52,46 @@ def cars_history(request, id):
         'history':history,
     }
     return render(request, 'main/history.html',content)
+
+
+def UserLogin(request):
+    """ антетификация пользователя """
+    if request.method == 'POST':
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            messages.success(request, 'Вы успешно вошли в аккаунт')
+            return redirect('index')
+    else:
+        form = LoginForm()
     
+    context = {
+        'title':'Авторизация',
+        'form':form
+    }
+    return render(request, 'main/login_form.html', context)
 
 
+def user_logout(request):
+    logout(request)
+    return redirect('index')
+
+
+def Register(request):
+    """ Регистрация пользователя """
+    if request.method == 'POST':
+        form = RegistrationForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        
+    else:
+        form = RegistrationForm()
+    context = {
+        'title':'Регистрация',
+        'form':form
+    }
+    return render(request, 'main/register.html', context)
 
 

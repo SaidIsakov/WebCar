@@ -21,8 +21,9 @@
 
 
     <main>
-    {% block main %}
-    {% endblock main %}
+        {% include "main/components/messages.html" %}
+        {% block main %}
+        {% endblock main %}
     </main>
 
     <!--Footer-->
